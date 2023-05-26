@@ -5,15 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="img/style.css">
     <title>METRICMIND APM SOLUTIONS</title>
 </head>
 
 <body>
     <div class="header">
-    <img src="img/Dark Blue Minimal Technology Logo (1).png" alt="Logo da Empresa" class="logo">
+        <img src="img/logo.png" alt="Logo da Empresa" class="logo">
         <?php
-        
         class Menu
         {
             private $items;
@@ -32,7 +31,7 @@
                 echo '</div>';
             }
         }
-        
+
         // Criando os itens do menu
         $items = [
             ['label' => 'Quem Somos Nós', 'url' => 'quem-somos.php'],
@@ -41,7 +40,7 @@
             ['label' => 'Contato', 'url' => 'contato.php'],
             ['label' => 'Clientes', 'url' => 'clientes.php'],
             ['label' => 'Login', 'url' => 'login.php'],
-            ['label' => 'Cadastro', 'url' => 'cadastro.php']
+            ['label' => 'Cadastro', 'url' => 'create.php']
         ];
 
         // Instanciando a classe Menu e renderizando o menu
@@ -52,4 +51,3 @@
 </body>
 
 </html>
-

@@ -1,0 +1,55 @@
+       .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #000000;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Estilos para o menu */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background:#a8a6a6;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2px;
+            background-color: white;
+        }
+
+        .header img {
+
+            height: auto;
+
+
+        }
+
+        .logo {
+            width: 200px;
+        }
+
+        .menu {
+            display: flex;
+            align-items: left;
+            width: 100%;
+        }
+
+        .menu a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            color: #ff0000;
+        }

@@ -22,13 +22,14 @@ $saibaMaisButton = new Button("Saiba Mais", "button");
 $soliciteApresentacaoButton = new Button("Solicite uma Apresentação", "button");
 
 ?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>METRICMID APM SOLUTIONS
     </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="img/style.css">
 </head>
 
 <body>

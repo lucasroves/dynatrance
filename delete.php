@@ -1,22 +1,39 @@
+<?php include_once 'menu.php'; ?>
 <?php
 
 require_once 'config.php';
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Verifica se os campos 'cnpj' e 'senha' foram preenchidos
+    if (!empty($_POST['cnpj']) && !empty($_POST['senha'])) {
+        $cnpj = $_POST['cnpj'];
+        $senha = $_POST['senha'];
 
-    // Prepara e executa a query para excluir o registro
-    $stmt = $connection->prepare('DELETE FROM clientes WHERE id = ?');
-    $stmt->bind_param('i', $id);
-    $stmt->execute();
+        // Verifica se o CNPJ e a senha correspondem a um registro na tabela
+        $stmt = $conn->prepare('SELECT * FROM cliente WHERE cnpj = ? AND senha = ?');
+        $stmt->bind_param('ss', $cnpj, $senha);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-    if ($stmt->affected_rows > 0) {
-        echo 'Registro excluído com sucesso!';
+        if ($result->num_rows > 0) {
+            // O CNPJ e a senha estão corretos, então prossegue com a exclusão do registro
+            $stmt = $conn->prepare('DELETE FROM cliente WHERE cnpj = ?');
+            $stmt->bind_param('s', $cnpj);
+            $stmt->execute();
+
+            if ($stmt->affected_rows > 0) {
+                echo 'Registro excluído com sucesso!';
+            } else {
+                echo 'Erro ao excluir o registro.';
+            }
+
+            $stmt->close();
+        } else {
+            echo 'CNPJ e/ou senha incorretos.';
+        }
     } else {
-        echo 'Erro ao excluir o registro.';
+        echo 'Por favor, preencha os campos CNPJ e senha.';
     }
-
-    $stmt->close();
 }
 
 ?>
@@ -28,10 +45,15 @@ if (isset($_GET['id'])) {
 </head>
 <body>
     <h2>Excluir Registro</h2>
-    <p>Digite o ID do registro que deseja excluir:</p>
-    <form method="GET" action="delete.php">
-        <input type="text" name="id" required>
+    <form method="POST" action="delete.php">
+        <label for="cnpj">CNPJ:</label>
+        <input type="text" name="cnpj" required><br>
+
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" required><br>
+
         <input type="submit" value="Excluir">
+        <button onclick="location.href='index.php'">Cancelar</button>
     </form>
 </body>
 </html>
