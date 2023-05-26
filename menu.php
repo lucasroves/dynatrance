@@ -11,8 +11,9 @@
 
 <body>
     <div class="header">
-        <img src=".png" alt="Logo da Empresa" class="logo">
+    <img src="img/Dark Blue Minimal Technology Logo (1).png" alt="Logo da Empresa" class="logo">
         <?php
+        
         class Menu
         {
             private $items;
@@ -31,7 +32,7 @@
                 echo '</div>';
             }
         }
-
+        
         // Criando os itens do menu
         $items = [
             ['label' => 'Quem Somos Nós', 'url' => 'quem-somos.php'],
