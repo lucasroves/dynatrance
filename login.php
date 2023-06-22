@@ -11,7 +11,20 @@ class LoginPage
 
         <head>
             <title>Página de Login</title>
-            <link rel="stylesheet" href="img/style.css">
+            <style>
+                .loginPage {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 400px;
+                    height: 400px;
+                    background-color: rgb(3, 2, 2);
+                    border-radius: 10px;
+                    padding: 20px;
+                    background-image: url(/);
+                }
+            </style>
         </head>
 
         <body>

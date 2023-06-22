@@ -21,7 +21,7 @@ class Button
 }
 
 $saibaMaisButton = new Button("Saiba Mais", "buttonS", "#");
-$soliciteApresentacaoButton = new Button("Solicite uma Apresentação", "buttonA", "#");
+$soliciteApresentacaoButton = new Button("Solicite uma Apresentação", "buttonA", "create.php");
 
 ?>
 
@@ -30,7 +30,7 @@ $soliciteApresentacaoButton = new Button("Solicite uma Apresentação", "buttonA
 
 <head>
     <title>MetricMind APM Solutions</title>
-    <link rel="stylesheet" href="img/style.css">
+    
 </head>
 
 <body class="body">
