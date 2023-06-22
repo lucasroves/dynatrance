@@ -157,23 +157,3 @@
         align-items: left;
     }
     
-    .bodyLogin {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background: #a8a6a6;
-        background-image: url(dyna.png);
-    }
-
-
-    .loginPage {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 400px;
-        height: 400px;
-        background-color: white;
-        border-radius: 10px;
-        padding: 20px;
-    }
